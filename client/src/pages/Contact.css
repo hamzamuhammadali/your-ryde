@@ -1,0 +1,222 @@
+/* Contact Page */
+.contact-page {
+  min-height: 100vh;
+}
+
+/* Shared */
+.ct-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.ct-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 2.6rem;
+  color: var(--primary-black);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.ct-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-medium);
+  max-width: 560px;
+  margin: 1rem auto 0 auto;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ── Hero ── */
+.ct-hero {
+  background-color: #f5f3ef;
+  padding: 3rem 0 0 0;
+}
+
+.ct-hero-banner {
+  background: linear-gradient(135deg, var(--primary-black) 0%, #222 100%);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  display: flex;
+  align-items: flex-end;
+  min-height: 200px;
+}
+
+.ct-hero-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color: var(--primary-white);
+  margin: 0;
+}
+
+/* ── Main (Form + Info) ── */
+.ct-main {
+  padding: 5rem 0;
+  background-color: var(--primary-white);
+}
+
+.ct-main-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ct-info-col {
+  position: sticky;
+  top: 100px;
+}
+
+/* Override ContactInfo styles to match theme */
+.ct-info-col .ci-card {
+  /* Already styled in ContactInfo.css */
+}
+
+/* Override ContactForm styles to match theme */
+.ct-form-col .contact-form-container {
+  background: var(--primary-white);
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: none;
+}
+
+/* ── Quick Links ── */
+.ct-links {
+  padding: 5rem 0;
+  background-color: #f5f3ef;
+}
+
+.ct-links-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.ct-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ct-link-card {
+  background: var(--primary-white);
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.ct-link-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.ct-link-icon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 1.25rem;
+  opacity: 0.7;
+}
+
+.ct-link-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-black);
+  margin-bottom: 0.75rem;
+}
+
+.ct-link-divider {
+  width: 100%;
+  height: 1px;
+  background: #e8e8e8;
+  margin-bottom: 0.75rem;
+}
+
+.ct-link-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-medium);
+  margin: 0 0 1.25rem 0;
+  flex: 1;
+}
+
+.ct-link-action {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary-black);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.ct-link-action:hover {
+  color: var(--primary-yellow-dark);
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+  .ct-heading {
+    font-size: 2.1rem;
+  }
+
+  .ct-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ct-info-col {
+    position: static;
+  }
+
+  .ct-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .ct-hero-banner {
+    padding: 2.5rem 1.5rem;
+    min-height: 140px;
+    border-radius: 16px;
+  }
+
+  .ct-hero-title {
+    font-size: 2rem;
+  }
+
+  .ct-heading {
+    font-size: 1.6rem;
+  }
+
+  .ct-main,
+  .ct-links {
+    padding: 3rem 0;
+  }
+
+  .ct-links-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-link-card {
+    transition: none;
+  }
+}

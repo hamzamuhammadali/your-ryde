@@ -1,0 +1,65 @@
+/* Layout Component Styles */
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-white);
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  position: relative;
+}
+
+/* Ensure proper spacing for sticky header */
+.main-content {
+  padding-top: 0;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .layout-container {
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    /* Ensure content doesn't get cut off on mobile */
+    min-height: calc(100vh - 120px); /* Approximate header + footer height */
+  }
+}
+
+/* Accessibility improvements */
+.layout-container:focus-within {
+  /* Ensure focus is visible within the layout */
+}
+
+/* Skip to main content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-yellow);
+  color: var(--primary-black);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Print styles */
+@media print {
+  .layout-container {
+    min-height: auto;
+  }
+  
+  .main-content {
+    min-height: auto;
+  }
+}

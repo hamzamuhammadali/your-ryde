@@ -1,0 +1,269 @@
+/* Hero Banner - Umbraco-inspired layout */
+.hero-banner {
+  background-color: #f5f3ef;
+  padding: 0rem 0 0 0;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr minmax(380px, 480px);
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Left: Text */
+.hero-text {
+  max-width: 650px;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  color: var(--primary-black);
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: -1px;
+}
+
+.hero-title-accent {
+  color: var(--primary-black);
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  color: var(--text-medium);
+  max-width: 420px;
+}
+
+/* CTA Buttons */
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.hero-btn--primary {
+  background-color: var(--primary-yellow);
+  color: var(--primary-black);
+  border: 2px solid var(--primary-yellow);
+}
+
+.hero-btn--primary:hover {
+  background-color: var(--primary-yellow-dark);
+  border-color: var(--primary-yellow-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+}
+
+.hero-btn--outline {
+  background-color: transparent;
+  color: var(--primary-black);
+  border: 2px solid var(--primary-black);
+}
+
+.hero-btn--outline:hover {
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  transform: translateY(-2px);
+}
+
+.hero-btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--primary-black);
+  color: var(--primary-yellow);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.hero-btn--primary:hover .hero-btn-arrow {
+  background-color: var(--primary-white);
+  color: var(--primary-black);
+}
+
+.hero-btn-arrow--dark {
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+}
+
+.hero-btn--outline:hover .hero-btn-arrow--dark {
+  background-color: var(--primary-yellow);
+  color: var(--primary-black);
+}
+
+/* Right: Form */
+.hero-form-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.hero-form {
+  background: var(--primary-white);
+  border-radius: 24px;
+  padding: 0;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  min-width: 380px;
+  max-width: 480px;
+  overflow: hidden;
+}
+
+/* Remove double padding/shadow when BookingForm is inside hero */
+.hero-form .booking-form-container {
+  padding: 1.25rem;
+  box-shadow: none;
+  border-radius: 0;
+  max-width: 100%;
+  margin: 0;
+}
+
+.hero-form .form-title {
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero-form .form-group {
+  margin-bottom: 0.85rem;
+}
+
+.hero-form .form-label {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.hero-form .form-input,
+.hero-form .form-select,
+.hero-form .country-code-select {
+  padding: 0.55rem 0.65rem;
+  font-size: 0.9rem;
+}
+
+.hero-form .submit-btn {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hero-banner {
+    padding: 3rem 0 0 0;
+    min-height: auto;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-ctas {
+    justify-content: center;
+  }
+
+  .hero-form-wrapper {
+    justify-content: center;
+  }
+
+  .hero-form {
+    max-width: 520px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 2rem 0 0 0;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-form {
+    padding: 0;
+    border-radius: 20px;
+    min-width: 0;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btn {
+    justify-content: center;
+  }
+
+  .hero-form {
+    padding: 0;
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-btn {
+    transition: none;
+  }
+}

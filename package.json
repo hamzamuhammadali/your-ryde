@@ -1,0 +1,21 @@
+{
+  "name": "ryde-taxi-booking",
+  "version": "1.0.0",
+  "description": "Ryde Taxi Booking Web Application",
+  "main": "server/app.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm start",
+    "server:start": "cd server && npm start",
+    "client:build": "cd client && npm run build",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "test": "cd server && npm test && cd ../client && npm test"
+  },
+  "keywords": ["taxi", "booking", "react", "nodejs", "mysql"],
+  "author": "Ryde Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

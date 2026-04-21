@@ -1,0 +1,16 @@
+.ride-management {
+  padding: 20px;
+  min-height: 100vh;
+  background: #f9fafb;
+}
+
+.ride-management-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .ride-management {
+    padding: 10px;
+  }
+}

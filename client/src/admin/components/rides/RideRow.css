@@ -1,0 +1,271 @@
+.ride-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 120px 100px 140px 120px 100px 120px 80px;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  align-items: center;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.ride-row:hover {
+  background: #f9fafb;
+}
+
+.ride-row.updating {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #374151;
+  min-height: 40px;
+}
+
+.ride-id {
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.pickup-location,
+.destination {
+  font-weight: 500;
+}
+
+.phone {
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.passengers {
+  text-align: center;
+}
+
+.bags-info {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.schedule {
+  font-size: 13px;
+}
+
+.scheduled {
+  color: #374151;
+}
+
+.schedule-label {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.immediate {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.price-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.price-input {
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 80px;
+}
+
+.price-input:focus {
+  outline: none;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.2);
+}
+
+.price-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 2px 6px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  min-width: 20px;
+}
+
+.save-btn {
+  background: #10b981;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #059669;
+}
+
+.cancel-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #dc2626;
+}
+
+.price-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.price-value {
+  font-weight: 500;
+}
+
+.edit-price-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 3px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.edit-price-btn:hover {
+  opacity: 1;
+  background: #f3f4f6;
+}
+
+.created-date {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.actions {
+  justify-content: center;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.view-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: all 0.2s;
+}
+
+.view-btn:hover {
+  opacity: 1;
+  background: #f3f4f6;
+}
+
+.updating-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.updating-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #fbbf24;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  .ride-row {
+    display: block;
+    padding: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin: 8px 16px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .ride-row:hover {
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f4f6;
+    min-height: auto;
+  }
+
+  .cell:last-child {
+    border-bottom: none;
+  }
+
+  .cell::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .ride-id::before { content: "ID: "; }
+  .pickup-location::before { content: "Pickup: "; }
+  .destination::before { content: "Destination: "; }
+  .phone::before { content: "Phone: "; }
+  .passengers::before { content: "Passengers: "; }
+  .schedule::before { content: "Schedule: "; }
+  .status::before { content: "Status: "; }
+  .price::before { content: "Price: "; }
+  .created-date::before { content: "Created: "; }
+  .actions::before { content: "Actions: "; }
+
+  .price-edit {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .price-input {
+    width: 60px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .ride-row {
+    grid-template-columns: 50px 1fr 1fr 100px 80px 120px 100px 80px 100px 60px;
+    gap: 8px;
+  }
+}

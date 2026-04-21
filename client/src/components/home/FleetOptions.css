@@ -1,0 +1,145 @@
+/* Fleet Section */
+.fleet-section {
+  padding: 5rem 0;
+  background-color: #f5f3ef;
+}
+
+/* Header */
+.fleet-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.fleet-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.fleet-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: 2.6rem;
+  color: var(--primary-black);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* Grid */
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card */
+.fleet-card {
+  background: var(--primary-white);
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.fleet-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.fleet-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.fleet-icon {
+  font-size: 2rem;
+}
+
+.fleet-price {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-black);
+  background: var(--primary-yellow);
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.fleet-type {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-black);
+  margin-bottom: 0.6rem;
+}
+
+.fleet-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-medium);
+  margin: 0 0 1.25rem 0;
+  flex: 1;
+}
+
+.fleet-specs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.fleet-spec {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .fleet-heading {
+    font-size: 2.1rem;
+  }
+
+  .fleet-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .fleet-section {
+    padding: 3rem 0;
+  }
+
+  .fleet-heading {
+    font-size: 1.6rem;
+  }
+
+  .fleet-header {
+    margin-bottom: 2rem;
+  }
+
+  .fleet-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .fleet-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fleet-card {
+    transition: none;
+  }
+}
